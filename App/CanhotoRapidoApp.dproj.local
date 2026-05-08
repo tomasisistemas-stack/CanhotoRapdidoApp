@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<ActiveMobileDevice>
+		<NoProfile Android="RQ8N30907PB" Android64="RQ8N30907PB"/>
+	</ActiveMobileDevice>
+	<Transactions>
+    <Transaction>2026/02/06 20:57:26.000.058,C:\Tomasi Sistemas\ForegroundLocationDemo\App\AppUnit.fmx=C:\Tomasi Sistemas\ForegroundLocationDemo\App\unPrincipal.fmx</Transaction>
+    <Transaction>2026/02/06 20:57:26.000.058,C:\Tomasi Sistemas\ForegroundLocationDemo\App\AppUnit.pas=C:\Tomasi Sistemas\ForegroundLocationDemo\App\unPrincipal.pas</Transaction>
+    <Transaction>2026/02/06 21:55:59.000.052,=C:\Tomasi Sistemas\ForegroundLocationDemo\App\unDMRest.pas</Transaction>
+    <Transaction>2026/02/06 21:55:59.000.081,=C:\Tomasi Sistemas\ForegroundLocationDemo\App\unFuncoes.pas</Transaction>
+    <Transaction>2026/02/06 21:55:59.000.270,=C:\Tomasi Sistemas\ForegroundLocationDemo\App\unInventario.pas</Transaction>
+    <Transaction>2026/02/06 21:56:00.000.962,=C:\Tomasi Sistemas\ForegroundLocationDemo\App\UnitPrincipal.pas</Transaction>
+    <Transaction>2026/02/06 21:56:02.000.130,=C:\Tomasi Sistemas\ForegroundLocationDemo\App\unLogin.pas</Transaction>
+    <Transaction>2026/02/06 21:56:02.000.283,=C:\Tomasi Sistemas\ForegroundLocationDemo\App\unMapRouter.pas</Transaction>
+    <Transaction>2026/02/06 21:56:02.000.408,=C:\Tomasi Sistemas\ForegroundLocationDemo\App\unOffline.pas</Transaction>
+    <Transaction>2026/02/06 21:57:07.000.133,=C:\Tomasi Sistemas\ForegroundLocationDemo\App\u99Permissions.pas</Transaction>
+    <Transaction>2026/02/06 21:57:07.000.279,=C:\Tomasi Sistemas\ForegroundLocationDemo\App\unConfirmarEntrega.pas</Transaction>
+    <Transaction>2026/02/06 23:05:11.000.193,C:\Tomasi Sistemas\ForegroundLocationDemo\App\ForegroundLocationApp.dproj=C:\Tomasi Sistemas\ForegroundLocationDemo\App\CanhotoRapidoApp.dproj</Transaction>
+    <Transaction>2026/02/06 23:16:14.000.024,C:\Tomasi Sistemas\ForegroundLocationDemo\App\UnitPrincipal.pas=</Transaction>
+    <Transaction>2026/02/06 23:49:56.000.054,C:\Tomasi Sistemas\ForegroundLocationDemo\App\unInventario.pas=</Transaction>
+    <Transaction>2026/02/07 16:51:50.000.614,C:\Tomasi Sistemas\ForegroundLocationDemo\App\unMapRouter.pas=</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="activity-1.7.2.dex.jar"/>
+    <File Path="annotation-experimental-1.3.0.dex.jar"/>
+    <File Path="annotations-13.0.dex.jar"/>
+    <File Path="appcompat-1.2.0.dex.jar"/>
+    <File Path="appcompat-resources-1.2.0.dex.jar"/>
+    <File Path="collection-1.1.0.dex.jar"/>
+    <File Path="concurrent-futures-1.1.0.dex.jar"/>
+    <File Path="core-1.10.1.dex.jar"/>
+    <File Path="core-common-2.2.0.dex.jar"/>
+    <File Path="core-runtime-2.2.0.dex.jar"/>
+    <File Path="cursoradapter-1.0.0.dex.jar"/>
+    <File Path="customview-1.0.0.dex.jar"/>
+    <File Path="documentfile-1.0.0.dex.jar"/>
+    <File Path="drawerlayout-1.0.0.dex.jar"/>
+    <File Path="error_prone_annotations-2.9.0.dex.jar"/>
+    <File Path="fmx.dex.jar"/>
+    <File Path="fragment-1.2.5.dex.jar"/>
+    <File Path="interpolator-1.0.0.dex.jar"/>
+    <File Path="javax.inject-1.dex.jar"/>
+    <File Path="lifecycle-common-2.6.1.dex.jar"/>
+    <File Path="lifecycle-livedata-2.6.1.dex.jar"/>
+    <File Path="lifecycle-livedata-core-2.6.1.dex.jar"/>
+    <File Path="lifecycle-runtime-2.6.1.dex.jar"/>
+    <File Path="lifecycle-viewmodel-2.6.1.dex.jar"/>
+    <File Path="lifecycle-viewmodel-savedstate-2.6.1.dex.jar"/>
+    <File Path="listenablefuture-1.0.dex.jar"/>
+    <File Path="loader-1.0.0.dex.jar"/>
+    <File Path="localbroadcastmanager-1.0.0.dex.jar"/>
+    <File Path="print-1.0.0.dex.jar"/>
+    <File Path="profileinstaller-1.3.0.dex.jar"/>
+    <File Path="savedstate-1.2.1.dex.jar"/>
+    <File Path="startup-runtime-1.1.1.dex.jar"/>
+    <File Path="tracing-1.0.0.dex.jar"/>
+    <File Path="vectordrawable-1.1.0.dex.jar"/>
+    <File Path="vectordrawable-animated-1.1.0.dex.jar"/>
+    <File Path="versionedparcelable-1.1.1.dex.jar"/>
+    <File Path="viewpager-1.0.0.dex.jar"/>
+    <File Path="..\Service\Android\Debug\ForegroundLocationService.jar"/>
+    <File Path="activity-1.7.2.dex.jar"/>
+    <File Path="annotation-experimental-1.3.0.dex.jar"/>
+    <File Path="annotations-13.0.dex.jar"/>
+    <File Path="appcompat-1.2.0.dex.jar"/>
+    <File Path="appcompat-resources-1.2.0.dex.jar"/>
+    <File Path="collection-1.1.0.dex.jar"/>
+    <File Path="concurrent-futures-1.1.0.dex.jar"/>
+    <File Path="core-1.10.1.dex.jar"/>
+    <File Path="core-common-2.2.0.dex.jar"/>
+    <File Path="core-runtime-2.2.0.dex.jar"/>
+    <File Path="cursoradapter-1.0.0.dex.jar"/>
+    <File Path="customview-1.0.0.dex.jar"/>
+    <File Path="documentfile-1.0.0.dex.jar"/>
+    <File Path="drawerlayout-1.0.0.dex.jar"/>
+    <File Path="error_prone_annotations-2.9.0.dex.jar"/>
+    <File Path="fmx.dex.jar"/>
+    <File Path="fragment-1.2.5.dex.jar"/>
+    <File Path="interpolator-1.0.0.dex.jar"/>
+    <File Path="javax.inject-1.dex.jar"/>
+    <File Path="lifecycle-common-2.6.1.dex.jar"/>
+    <File Path="lifecycle-livedata-2.6.1.dex.jar"/>
+    <File Path="lifecycle-livedata-core-2.6.1.dex.jar"/>
+    <File Path="lifecycle-runtime-2.6.1.dex.jar"/>
+    <File Path="lifecycle-viewmodel-2.6.1.dex.jar"/>
+    <File Path="lifecycle-viewmodel-savedstate-2.6.1.dex.jar"/>
+    <File Path="listenablefuture-1.0.dex.jar"/>
+    <File Path="loader-1.0.0.dex.jar"/>
+    <File Path="localbroadcastmanager-1.0.0.dex.jar"/>
+    <File Path="print-1.0.0.dex.jar"/>
+    <File Path="profileinstaller-1.3.0.dex.jar"/>
+    <File Path="savedstate-1.2.1.dex.jar"/>
+    <File Path="startup-runtime-1.1.1.dex.jar"/>
+    <File Path="tracing-1.0.0.dex.jar"/>
+    <File Path="vectordrawable-1.1.0.dex.jar"/>
+    <File Path="vectordrawable-animated-1.1.0.dex.jar"/>
+    <File Path="versionedparcelable-1.1.1.dex.jar"/>
+    <File Path="viewpager-1.0.0.dex.jar"/>
+    <File Path="..\..\CanhotoRapidoApp"/>
+    <File Path="..\Service"/>
+    <File Path="..\Service\ServiceUnit.pas"/>
+    <File Path="..\Service\ServiceUnit.dfm"/>
+    <File Path="u99Permissions.pas"/>
+    <File Path="unConfirmarEntrega.pas"/>
+    <File Path="unConfirmarEntrega.fmx"/>
+    <File Path="unPrincipal.pas"/>
+    <File Path="unPrincipal.fmx"/>
+    <File Path="unDMRest.pas"/>
+    <File Path="unFuncoes.pas"/>
+    <File Path="unLogin.pas"/>
+    <File Path="unLogin.fmx"/>
+    <File Path="unOffline.pas"/>
+    <File Path="unOffline.fmx"/>
+  </ProjectSortOrder>
+	<BT_BuildType>AppStore</BT_BuildType>
+</BorlandProject>

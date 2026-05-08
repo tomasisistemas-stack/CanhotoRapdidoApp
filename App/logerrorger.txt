@@ -1,0 +1,907 @@
+
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Status         | Action Name              | Description                                                                     |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Completed      | Action Group             | Action Group [Merge automático]                                                 |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Completed      | If File/Folder Exists    | Check If [ C:\local_sucesso.txt ] Exists                                        |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Found file "C:\local_sucesso.txt"
+
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Completed      | If .. Then               | If [%merge_local_sucesso%] = [True]  [ True ]                                   |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Expression:
+     If ( %merge_local_sucesso% = True ) 
+Expanded Values:
+     True  =  True  [boolean comparison evaluates true]
+Expression evaluated True - child actions will be run
+
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Completed      | Try                      | Try                                                                             |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Completed      | Set Variable             | Set Variable merge_ok to [ 1 ]                                                  |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Variable merge_ok set to (integer): 1
+Success
+
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Completed      | Subversion Revert        | Subversion Revert                                                               |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+SVN Work Folder = C:\DW
+SVN Command = C:\Program Files\TortoiseSVN\bin\svn.exe revert --quiet --recursive  c:\dw c:\dwsci
+Executing external process: C:\Program Files\TortoiseSVN\bin\svn.exe
+Starting Directory: C:\DW
+Parameters: revert --quiet --recursive  c:\dw c:\dwsci
+Output from C:\Program Files\TortoiseSVN\bin\svn.exe
+
+Subversion revert successful
+
+
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Completed      | Subversion Update        | Subversion Update                                                               |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+SVN Work Folder = C:\DW
+SVN Command = C:\Program Files\TortoiseSVN\bin\svn.exe update --non-interactive --password [suppressed] --username finalbuilder 
+Executing external process: C:\Program Files\TortoiseSVN\bin\svn.exe
+Starting Directory: C:\DW
+Parameters: update --non-interactive --password [suppressed] --username finalbuilder 
+Output from C:\Program Files\TortoiseSVN\bin\svn.exe
+Updating '.':
+At revision 170131.
+
+Subversion update successful
+
+
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Completed      | Delay                    | Delay 1 second                                                                  |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Delay 1 second
+Delay expired, continuing run
+
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Completed      | Subversion Generic       | Subversion Merge DW                                                             |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+SVN Work Folder = C:\DW
+SVN Command = C:\Program Files\TortoiseSVN\bin\svn.exe merge https://sr-fontes.sci10.local:8443/svn/firebird/unico/trunk --non-interactive --password [suppressed] --username finalbuilder
+Executing external process: C:\Program Files\TortoiseSVN\bin\svn.exe
+Starting Directory: C:\DW
+Parameters: merge https://sr-fontes.sci10.local:8443/svn/firebird/unico/trunk --non-interactive --password [suppressed] --username finalbuilder
+Output from C:\Program Files\TortoiseSVN\bin\svn.exe
+--- Merging r169767 through r170131 into '.':
+U    BridgeSCI\BridgeSCI.dproj
+U    BridgeSCI\BridgeSCIHTTP.dproj
+U    BridgeSCI\BridgeSCI_Guardian.dproj
+U    DocumentaþÒo\Manuais Desenvolvimento\ExemploLentidaoTela\TesteLeituraTelas.dproj
+D    MapaModulos\ModuloSCI.map
+D    MapaModulos\SCIPackagesComponents.map
+U    PingSCI\PingSCI.dproj
+C    Script\Estrutura\Procedures_and_Views_and_Trigger.sql
+A    Script\Estrutura\versaogeral_checksum_web.sql
+U    Script\Estrutura\versaotrunk.sql
+A    Script\Proxima\depois\20241028_1125_TAREFAS_HIST_203479.sql
+A    Script\Proxima\depois\2024_03_04_1121_FINANCEIRO_217841.sql
+A    Script\Proxima\depois\2025_01_13_1250_TAREFAS_147031.sql
+A    Script\Proxima\depois\2025_01_29_0833_FOLHA_AtuVerbasPadroes.sql
+A    Script\Proxima\depois\2025_01_29_0837_FOLHA_IncluiVerbasPadroes.sql
+A    Script\Proxima\depois\2025_01_29_0900_FOLHA_ItensCalculoPadrao.sql
+A    Script\Proxima\depois\2025_01_29_1434_FOLHA_192225_IncluiItensCalculo.sql
+A    Script\Proxima\depois\2025_01_30_1227_FOLHA_AtuVerbas.sql
+A    Script\Proxima\depois\2025_02_10_Contabil_197388.sql
+A    Script\Proxima\depois\2025_03_03_1410_FINANCEIRO_220292.sql
+A    Script\Proxima\depois\2025_03_06_0746_FISCAL_218508 .sql
+A    Script\Proxima\depois\2025_03_11_1100_Contabil_220526.sql
+   C Script\Proxima\depois\2025_03_12_1504_FOLHA_ItensTelaDCTFPadrao.sql
+A    Script\Proxima\depois\2025_03_14_1058_FISCAL_220996.sql
+A    Script\Proxima\depois\2025_03_14_1642_Contabil_220706.sql
+A    Script\Proxima\depois\2025_03_18_1059_FISCAL_220954.sql
+A    Script\Proxima\depois\2025_03_18_1334_GERAL_219144.sql
+A    Script\Proxima\depois\2025_03_18_1801_TAREFAS_221277.sql
+A    Script\Proxima\depois\2025_03_19_1655_FINANCEIRO_218973.sql
+A    Script\Proxima\depois\2025_03_23_1710_FINANCEIRO_219745.sql
+   C Script\Proxima\depois\RelaþÒo de faltas folgas.unico_ger
+   C Script\Proxima\depois\VRH_BASE_TRELCONF_ITENS_codigo_nome.sql
+U    Script\Sempre\0000_Tabelas_Gerador.sql
+U    Script\Sempre\TFORMULA.sql
+U    Script\Sempre\VCT_BASE_HISTORICO.SQL
+U    Script\Sempre\VCT_BASE_TIPOCONTROLE.sql
+U    Script\Sempre\VFIN_BASE_TTIPORPSEXP.sql
+U    Script\Sempre\VFIN_BASE_TTPROVEDORESCIDADES.sql
+U    ServicoUnico\ServicoUnico.dproj
+U    ServicoUnico\ServicoUnicoConsole.dpr
+U    ServicoUnico\ServicoUnicoConsole.dproj
+U    SignSCI\SignSCI.dpr
+U    SignSCI\SignSCI.dproj
+U    Testes\GerenciadorSCI\TestesGerenciadorSCI.dproj
+U    Testes\Modulos\Ativa\TestesModuloAtiva.dproj
+U    Testes\Modulos\Contabil\TestesModuloContabil.dproj
+U    Testes\Modulos\Controles\TestesModuloControles.dproj
+U    Testes\Modulos\Escrita\TestesModuloEscrita.dproj
+U    Testes\Modulos\Financeiro\TestesModuloFinanceiro.dproj
+U    Testes\Modulos\Folha\TestesModuloFolha.dproj
+U    Testes\Modulos\Geral\TestesModuloGeral.dproj
+U    Testes\Modulos\Lalur\TestesModuloLalur.dproj
+U    Testes\Modulos\Temporizador\TestesModuloTemporizador.dproj
+U    Testes\ServidorSCI\TestesServidorSCI.dproj
+U    Testes\UpdateSCI\TestesUpdateSCI.dproj
+U    componentes\Ativa Componentes\AtivaPackagesComponents.dproj
+U    componentes\BI Componentes\Componentes\uUtilBIConnection.pas
+U    componentes\Controles Componentes\ControlesPackagesComponents.dproj
+U    componentes\Escrita Componentes\Componentes\CLASSES DAO\uExportacaoDctfMGR.pas
+U    componentes\Escrita Componentes\Componentes\CLASSES DAO\uExportacaoSpedContribuicoesDBMGR.pas
+U    componentes\Escrita Componentes\Componentes\CLASSES DAO\uGIA_PADRAODBMGR.pas
+U    componentes\Escrita Componentes\Componentes\CLASSES DAO\uImportacaoNFSeDBMgr.pas
+U    componentes\Escrita Componentes\Componentes\CLASSES DAO\uImportacaoSpedDBMgr.pas
+U    componentes\Escrita Componentes\Componentes\CLASSES DAO\uRelatorioConferenciaNotasFiltradasMGR.pas
+U    componentes\Escrita Componentes\Componentes\CLASSES DAO\uSQLRelDIRBIMGR.pas
+U    componentes\Escrita Componentes\Componentes\CLASSES DAO\uSQLRelOperImobMGR.pas
+U    componentes\Escrita Componentes\Componentes\CLASSES DAO\uTrocaGlobalDemaisDocumentosMGR.pas
+U    componentes\Escrita Componentes\Componentes\CLASSES DAO\uVEF_BASE_TPLANOACOESTROCADBMgr.pas
+U    componentes\Escrita Componentes\Componentes\CLASSES DAO\uVEF_EMP_TICMSSPEDGERDBMgr.pas
+U    componentes\Escrita Componentes\Componentes\CLASSES DAO\uVEF_EMP_TICMSSPEDSTUFDBMgr.pas
+U    componentes\Escrita Componentes\Componentes\CLASSES DAO\uVEF_EMP_TMOVDEMAISDOC_F100DBMgr.pas
+U    componentes\Escrita Componentes\Componentes\Library\uUtilImportacao_Padrao_EF_Treeview.pas
+U    componentes\Escrita Componentes\Componentes\Library\uXMLImportCTe.pas
+U    componentes\Escrita Componentes\EFPackagesComponentes.dproj
+U    componentes\Escrita Componentes\EFPackagesComponentes2.dproj
+U    componentes\Financeiro Componentes\Componetes\Classes DAO\Financeiro\uVFIN_ESC_TCONFIGREMDB.pas
+U    componentes\Financeiro Componentes\Componetes\Classes DAO\Financeiro\uVFIN_ESC_TCONTASBANDBMgr.pas
+U    componentes\Financeiro Componentes\Componetes\Classes DAO\Financeiro\uVFIN_ESC_TFATURADBMgr.pas
+U    componentes\Financeiro Componentes\Componetes\Classes DAO\Financeiro\uVFIN_ESC_TRECEBIMENTOFATURADBMgr.pas
+U    componentes\Financeiro Componentes\Componetes\Library\uClasses_Financeiro.pas
+U    componentes\Financeiro Componentes\Componetes\Library\uControleBloquetoDBMGR.pas
+A    componentes\Financeiro Componentes\Componetes\Library\uControleCresol.pas
+U    componentes\Financeiro Componentes\Componetes\Library\uControleNFSEDBMGR.pas
+A    componentes\Financeiro Componentes\Componetes\Library\uCresolAPI.pas
+U    componentes\Financeiro Componentes\Componetes\Library\uExpNFSeACBR.pas
+U    componentes\Financeiro Componentes\Componetes\Library\uExpNFSeACBRInfisc.pas
+A    componentes\Financeiro Componentes\Componetes\Library\uExpNFSeACBRPRODAUB.pas
+U    componentes\Financeiro Componentes\Componetes\Library\uExpNFSeACBRWebISS.pas
+U    componentes\Financeiro Componentes\Componetes\Library\uExpNFSeACBReReceita.pas
+U    componentes\Financeiro Componentes\Componetes\Library\uExpNFSePadrao.pas
+A    componentes\Financeiro Componentes\Componetes\Library\uImpNFSePRODAUB.pas
+U    componentes\Financeiro Componentes\FinanceiroPackagesComponents.dpk
+U    componentes\Financeiro Componentes\FinanceiroPackagesComponents.dproj
+U    componentes\Financeiro Componentes\Formularios_Padroes\Formularios_ModuloFinanceiro\uBoletosPersonalizadosPadrao.pas
+U    componentes\Financeiro Componentes\Formularios_Padroes\Formularios_ModuloFinanceiro\uCadServicoPadraoFinanceiro.pas
+U    componentes\Financeiro Componentes\Formularios_Padroes\Formularios_ModuloFinanceiro\uConsultaFaturamentoPadrao_TreeView.pas
+U    componentes\Financeiro Componentes\Formularios_Padroes\Formularios_ModuloFinanceiro\uConsultaSaidaFaturamentoPadrao_TreeView.pas
+U    componentes\FinanceiroContabilidade Componentes\FinanceiroContabilidadePackagesComponents.dproj
+U    componentes\Folha Componentes\Componentes\Classes DAO\uIrFaixasDBMGR.pas
+U    componentes\Folha Componentes\Componentes\Library\uClasses_ComplementarAgrupado.pas
+U    componentes\Folha Componentes\Componentes\Processo\Calculo\uCalculo_Autonomo.pas
+U    componentes\Folha Componentes\Componentes\Processo\Calculo\uCalculo_FolhaComplementar.pas
+U    componentes\Folha Componentes\Componentes\Processo\Calculo\uCalculo_FolhaComplementarAgrupado.pas
+U    componentes\Folha Componentes\Componentes\Types\uFolhaTypes.pas
+U    componentes\Folha Componentes\Componentes\parser\uIntCalc.pas
+U    componentes\Folha Componentes\FolhaPackagesComponents.dproj
+U    componentes\Folha Componentes\Formularios_Padroes\uConsultaBases\uConsultaBasesPadrao.pas
+U    componentes\Integracao Componentes\Componentes\Classes DAO\uProcessoRecontabilizacaoDBMgr.pas
+U    componentes\Integracao Componentes\IntegracaoPackagesComponents.dpk
+U    componentes\Integracao Componentes\IntegracaoPackagesComponents.dproj
+U    componentes\Lalur Componentes\LaluRPackagesComponents.dproj
+U    componentes\Ponto Componentes\PontoPackagesComponents.dproj
+C    componentes\RH Componentes\Componentes\Apuracao\uApuracaoPontoUnico.pas
+U    componentes\RH Componentes\Componentes\Classes DAO\uImportacaoContratoIntermitenteCSVDBMgr.pas
+U    componentes\RH Componentes\Componentes\Classes DAO\uRH_COLCON_REFDBMgr.pas
+U    componentes\RH Componentes\Componentes\Classes DAO\uVRH_EMP_TREDUCAOCOLDBMgr.pas
+U    componentes\RH Componentes\Componentes\ExportacaoBanco\uExportacaoBancoMentoreCadastroCartao.pas
+U    componentes\RH Componentes\Componentes\ExportacaoBanco\uExportacaoBancoMentoreCargaDeposito.pas
+U    componentes\RH Componentes\Componentes\ExportacaoBanco\uExportacaoPadraoBanco.pas
+U    componentes\RH Componentes\Componentes\Library\uClasseMultiplosContratos.pas
+U    componentes\RH Componentes\Componentes\Library\uUtil_RH.pas
+U    componentes\RH Componentes\Componentes\Types\uRHTypes.pas
+U    componentes\RH Componentes\Formularios_Padroes\ExportacaoBanco\uProcessoExportacaoBancoRH_Padrao.pas
+U    componentes\RH Componentes\Formularios_Padroes\uRelatorio_Colaborador_Padrao_RH\uRelatorio_Colaborador_Padrao_RH.pas
+U    componentes\RH Componentes\RHPackagesComponents.dproj
+U    componentes\SCI Base\SCIPackagesBase.dproj
+U    componentes\SCI Componentes\Componentes\Additional\uImage_Info_SCI.pas
+U    componentes\SCI Componentes\Componentes\Additional\uScreenUserConfig.pas
+U    componentes\SCI Componentes\Componentes\CLASSES DAO\CONTABILIZACAO\uContabilizacao.pas
+U    componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\Orcamento\uVCT_BASE_ORCADODBMgr.pas
+U    componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\Protocolo\uVCT_EMPRESA_DOCSGERADOSDBMgr.pas
+U    componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\Protocolo\uVCT_EMPRESA_PROTOCOLOENTRADADBMgr.pas
+U    componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\Protocolo\uVCT_EMPRESA_PROTOCOLOSAIDADBMgr.pas
+U    componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\Protocolo\uVCT_EMPRESA_PROTODOCENTRADADBMgr.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\Protocolo
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_CTRLOBRSERDB.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_CTRLOBRSERDBMGR.pas
+A    componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_LEITURAPERSONALIZADADBMgr.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_OBRIGACAODB.pas
+UG   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_OBRIGACAODBMgr.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_SERVICODB.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_SERVICODBMgr.pas
+U    componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_CONFIG_DATASDBMgr.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_CONFIG_TELAOBRSERDB.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_CONFIG_TELAOBRSERDBMgr.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TAREFASWEBDB.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TAREFASWEBDBMgr.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TAREFASWEBOBSDB.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TAREFASWEBOBSDBMgr.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_THISTORICOTAREFADB.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_THISTORICOTAREFADBMgr.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TOBSTAREFADB.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TOBSTAREFADBMgr.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TSOLICITATAREFADB.pas
+U    componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TSOLICITATAREFADBMgr.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_PLANO_TRIBUTARIODB.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_PLANO_TRIBUTARIODBMgr.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_TRIBUTARIO_EMPRESADB.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_TRIBUTARIO_EMPRESADBMgr.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_TRIBUTOS_PLANO_TRIBUTARIODB.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_TRIBUTOS_PLANO_TRIBUTARIODBMgr.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles
+U    componentes\SCI Componentes\Componentes\CLASSES DAO\SCI\uImportacaoTerceiroMigracao.pas
+U    componentes\SCI Componentes\Componentes\CLASSES DAO\SCI\uPersonalizacaoDBMgr.pas
+U    componentes\SCI Componentes\Componentes\CLASSES DAO\SCI\uTerceiro_REFDBMgr.pas
+U    componentes\SCI Componentes\Componentes\CLASSES DAO\SCI\uVSH_BASE_TPLANO_DIRETORIODBMgr.pas
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\SCI
+U    componentes\SCI Componentes\Componentes\CLASSES DAO\SUCESSOR\uMigracaoLancamentosVisualDBMgr.pas
+U    componentes\SCI Componentes\Componentes\CLASSES DAO\SUCESSOR\uVSUC_EMP_TCONF_TLAN_MIGRACAODBMgr.pas
+U    componentes\SCI Componentes\Componentes\Classes\SCI\uControlaFavoritos.pas
+U    componentes\SCI Componentes\Componentes\Data Acess\uClientDataSetSCI.pas
+U    componentes\SCI Componentes\Componentes\Data Controls\uEdit_Codigo_Search_SCI.pas
+U    componentes\SCI Componentes\Componentes\Internet\uClientBridgeSCI.pas
+U    componentes\SCI Componentes\Componentes\Library\Controles\uConstsCTRL.pas
+U    componentes\SCI Componentes\Componentes\Library\Controles\uUtil_CTRL.pas
+U    componentes\SCI Componentes\Componentes\Library\uClasses_Gerador.pas
+U    componentes\SCI Componentes\Componentes\Library\uClasses_SCI.pas
+U    componentes\SCI Componentes\Componentes\Library\uConstsSCI.pas
+U    componentes\SCI Componentes\Componentes\Library\uConstsSCIGlobal.pas
+U    componentes\SCI Componentes\Componentes\Library\uConstsVerbas.pas
+U    componentes\SCI Componentes\Componentes\Library\uControleNomeSistema.pas
+U    componentes\SCI Componentes\Componentes\Library\uMetodosExported.pas
+U    componentes\SCI Componentes\Componentes\Library\uProcessoDASWeb.pas
+U    componentes\SCI Componentes\Componentes\Library\uUtilFirebird_SCI_Unico.pas
+U    componentes\SCI Componentes\Componentes\Library\uUtil_SCI.pas
+U    componentes\SCI Componentes\Componentes\PARSER\SCI\uParserSCI.pas
+U    componentes\SCI Componentes\Componentes\REINF\uR4010_PagtoBeneficiarioPF.pas
+U    componentes\SCI Componentes\Componentes\Standard\uComboBox_Padrao_SCI.pas
+U    componentes\SCI Componentes\Componentes\Types\uSCITypes.pas
+U    componentes\SCI Componentes\Formularios_Padroes\uConfigRadioCheckTreeView\uConfigRadioCheckTreeView.dfm
+U    componentes\SCI Componentes\Formularios_Padroes\uConfigRadioCheckTreeView\uConfigRadioCheckTreeView.pas
+U    componentes\SCI Componentes\Formularios_Padroes\uDigitacao_Padrao_Detalhe_SCI\uDigitacao_Padrao_Detalhe_SCI.pas
+U    componentes\SCI Componentes\Formularios_Padroes\uGerador_Padrao_SCI\uGerador_Padrao_SCI.pas
+U    componentes\SCI Componentes\Formularios_Padroes\uPersonalizacao_SCI\uPersonalizacao_SCI.pas
+U    componentes\SCI Componentes\Formularios_Padroes\uProcesso_Padrao_SCI\uStatusProcesso\uStatusProcesso.pas
+U    componentes\SCI Componentes\Formularios_Padroes\uRelatorioConsultaTreeView_Padrao_SCI\uRelatorioConsultaTreeView_Padrao_SCI.pas
+U    componentes\SCI Componentes\Formularios_Padroes\uRelatorio_Padrao_SCI\uRelatorio_Empresa_Padrao.pas
+U    componentes\SCI Componentes\Formularios_Padroes\uRelatorio_Padrao_SCI\uRelatorio_Gestor_Padrao_SCI.pas
+U    componentes\SCI Componentes\Formularios_Padroes\uRelatorio_Padrao_SCI\uRelatorio_Padrao_SCI.pas
+U    componentes\SCI Componentes\SCIPackagesComponents.dproj
+C    componentes\SCI Componentes\SCIPackagesComponents2.dpk
+C    componentes\SCI Componentes\SCIPackagesComponents2.dproj
+U    componentes\SChIp Components\SChIPPackageComponents.dpk
+U    componentes\SChIp Components\SChIPPackageComponents.dproj
+U    componentes\SST Componentes\SSTPackagesComponents.dproj
+U    componentes\Sucessor Componentes\Componetes\Classes DAO\uExportacaoCOSIFMGR.pas
+U    componentes\Sucessor Componentes\Componetes\Classes DAO\uExportacaoDESIFMGR.pas
+U    componentes\Sucessor Componentes\Componetes\Classes DAO\uExportacaoWinthorTotvsDBMGR.pas
+U    componentes\Sucessor Componentes\Componetes\Classes DAO\uImportacaoLancamento.pas
+U    componentes\Sucessor Componentes\Componetes\Classes DAO\uImportacaoLancamentoCentroCusto.pas
+U    componentes\Sucessor Componentes\Componetes\Classes DAO\uImportacaoLancamentoContabilTxtDBMgr.pas
+U    componentes\Sucessor Componentes\Componetes\Classes DAO\uTrataDeParaMigracaoLancamentos.pas
+A    componentes\Sucessor Componentes\Componetes\Classes DAO\uVSUC_BASE_EXTENSODBMgr.pas
+U    componentes\Sucessor Componentes\Componetes\Classes DAO\uVSUC_EMPRESAS_TVINCTRANSACAODBMgr.pas
+A    componentes\Sucessor Componentes\Componetes\Library\uUtilImportacao_LancCC_Migracao.pas
+U    componentes\Sucessor Componentes\FORMULARIOS_PADROES\URELATORIO_PADRAO_DEMONSTRATIVO_FORMULAS_SUCESSOR\uRelatorio_Padrao_Demonstrativo_Formulas_Sucessor.dfm
+U    componentes\Sucessor Componentes\FORMULARIOS_PADROES\URELATORIO_PADRAO_DEMONSTRATIVO_FORMULAS_SUCESSOR\uRelatorio_Padrao_Demonstrativo_Formulas_Sucessor.pas
+U    componentes\Sucessor Componentes\SucessorPackagesComponents.dpk
+U    componentes\Sucessor Componentes\SucessorPackagesComponents.dproj
+U    componentes\Temporizador Componentes\TemporizadorPackagesComponents.dpk
+U    componentes\Temporizador Componentes\TemporizadorPackagesComponents.dproj
+U    grupo ·nico\GrupoUnicoBuildParalelo.groupproj
+U    instalacao\Projeto Instala\apagardemo.dpr
+U    instalacao\Projeto Instala\apagardemo.dproj
+D    instalacao\AtualizadorFB25_3
+D    instalacao\AtualizadorFB25_3_Interface
+U    kano\Kano.dpr
+U    kano\Kano.dproj
+U    modulos\ModuloAtiva\ModuloAtiva.dproj
+U    modulos\ModuloAuditoria\ModuloAuditoria.dpk
+U    modulos\ModuloAuditoria\ModuloAuditoria.dproj
+U    modulos\ModuloCentralNotificacoes\ModuloCentralNotificacoes.dpk
+U    modulos\ModuloCentralNotificacoes\ModuloCentralNotificacoes.dproj
+U    modulos\ModuloConnection\ModuloConnection.dpk
+U    modulos\ModuloConnection\ModuloConnection.dproj
+U    modulos\ModuloControles\Cadastros\uCadCTRLObrigacoes.dfm
+U    modulos\ModuloControles\Cadastros\uCadCTRLProcesso.dfm
+U    modulos\ModuloControles\Cadastros\uCadCTRLProcesso.pas
+U    modulos\ModuloControles\Cadastros\uCadCTRLServico.dfm
+U    modulos\ModuloControles\Cadastros\uCadGraficoDashboard.dfm
+U    modulos\ModuloControles\Cadastros\uCadOrcamento.dfm
+U    modulos\ModuloControles\Cadastros\uCadOrcamento.pas
+U    modulos\ModuloControles\Cadastros\uCadProtocoloEntrada.dfm
+U    modulos\ModuloControles\Cadastros\uCadProtocoloEntrada.pas
+U    modulos\ModuloControles\Cadastros\uCadProtocoloSaida.dfm
+U    modulos\ModuloControles\Cadastros\uCadQuadroDashboard.dfm
+A    modulos\ModuloControles\Cadastros\uCadastroLeituraPersonalizada.dfm
+A    modulos\ModuloControles\Cadastros\uCadastroLeituraPersonalizada.pas
+U    modulos\ModuloControles\Cadastros\uCadastroOBRSER.dfm
+U    modulos\ModuloControles\Cadastros\uCadastroOBRSER.pas
+U    modulos\ModuloControles\Consultas\uConsultaDocumentoProtocoloEntrada.dfm
+U    modulos\ModuloControles\Consultas\uConsultaDocumentoProtocoloEntrada.pas
+U    modulos\ModuloControles\Consultas\uConsultaGeralOrcamentos.pas
+A    modulos\ModuloControles\Consultas\uConsultaLeituraPersonalizada.dfm
+A    modulos\ModuloControles\Consultas\uConsultaLeituraPersonalizada.pas
+A    modulos\ModuloControles\Consultas\uConsultaTarefasBaixadasArquivo.dfm
+A    modulos\ModuloControles\Consultas\uConsultaTarefasBaixadasArquivo.pas
+U    modulos\ModuloControles\DataModule\udmControles.dfm
+U    modulos\ModuloControles\DataModule\udmControles.pas
+U    modulos\ModuloControles\DataModule\udmControlesConsulta.dfm
+U    modulos\ModuloControles\DataModule\udmControlesConsulta.pas
+A    modulos\ModuloControles\Dll\Relatorio\REL_CONTROLEORC_AGRUPADO.fr3
+A    modulos\ModuloControles\Dll\Relatorio\REL_CONTROLEORC_DETALHADO.fr3
+A    modulos\ModuloControles\Dll\Relatorio\frRelControleOrcamentario.fr3
+U    modulos\ModuloControles\Dll\Relatorio\frRelProtocoloModeloEntrega.fr3
+U    modulos\ModuloControles\Dll\Relatorio\frRelProtocoloModeloLista.fr3
+D    modulos\ModuloControles\Dll\Relatorio\frRelOrcadoRealizado_Orcamentario.fr3
+U    modulos\ModuloControles\ModuloControles.dpk
+U    modulos\ModuloControles\ModuloControles.dproj
+U    modulos\ModuloControles\Principal\uControlesUnico.dfm
+U    modulos\ModuloControles\Principal\uControlesUnico.pas
+ G   modulos\ModuloControles\Processos\uBaixaProtocoloSaida.dfm
+ G   modulos\ModuloControles\Processos\uBaixaProtocoloSaida.pas
+ G   modulos\ModuloControles\Processos\uConsultaImportaTarefaWeb.dfm
+ G   modulos\ModuloControles\Processos\uConsultaImportaTarefaWeb.pas
+ G   modulos\ModuloControles\Processos\uControleAlteraFinalizacao.dfm
+UG   modulos\ModuloControles\Processos\uControleAlteraFinalizacao.pas
+ G   modulos\ModuloControles\Processos\uControlePausaTarefa.dfm
+ G   modulos\ModuloControles\Processos\uControlePausaTarefa.pas
+U    modulos\ModuloControles\Processos\uFiltroProtocoloDocumentos.dfm
+U    modulos\ModuloControles\Processos\uFiltroProtocoloDocumentos.pas
+ G   modulos\ModuloControles\Processos\uFiltroTarefa.dfm
+ G   modulos\ModuloControles\Processos\uFiltroTarefa.pas
+U    modulos\ModuloControles\Processos\uFiltroTarefasUsuarioTreeView.dfm
+U    modulos\ModuloControles\Processos\uGerenciamentoProcessos.dfm
+U    modulos\ModuloControles\Processos\uGerenciamentoProcessos.pas
+ G   modulos\ModuloControles\Processos\uLanProtocoloSaida.dfm
+ G   modulos\ModuloControles\Processos\uLanProtocoloSaida.pas
+ G   modulos\ModuloControles\Processos\uObservacaoTarefa.dfm
+ G   modulos\ModuloControles\Processos\uObservacaoTarefa.pas
+UG   modulos\ModuloControles\Processos\uProtocoloDocumentos.dfm
+UG   modulos\ModuloControles\Processos\uProtocoloDocumentos.pas
+ G   modulos\ModuloControles\Processos\uSolicitacaoTarefas.dfm
+ G   modulos\ModuloControles\Processos\uSolicitacaoTarefas.pas
+U    modulos\ModuloControles\Processos\uTarefasUsuarioTreeView.dfm
+U    modulos\ModuloControles\Processos\uTarefasUsuarioTreeView.pas
+ G   modulos\ModuloControles\Processos\uTrocaUsuarioResponsavelSolicitacaoTarefa.dfm
+ G   modulos\ModuloControles\Processos\uTrocaUsuarioResponsavelSolicitacaoTarefa.pas
+ G   modulos\ModuloControles\Processos
+U    modulos\ModuloControles\Relatorios\uRelProtocolo.dfm
+U    modulos\ModuloControles\Relatorios\uRelTarefa.dfm
+U    modulos\ModuloEF\Cadastros\uCadAcoesPlanosTroca.dfm
+U    modulos\ModuloEF\Cadastros\uCadPlanoAcoesCATSP.dfm
+U    modulos\ModuloEF\Cadastros\uCadPlanoAcoesSEFSC.dfm
+U    modulos\ModuloEF\DLL\Relatorio\frRelatorioConferenciaNotasFiltradas.fr3
+U    modulos\ModuloEF\DLL\Relatorio\frRelatorioOperImobiliarias.fr3
+U    modulos\ModuloEF\Lancamentos\uLancamentoAjusteICMSE113_AjusteICMSSTE240.pas
+U    modulos\ModuloEF\ModuloEF.dproj
+U    modulos\ModuloEF\Processos\uExportacaoDCTF.dfm
+U    modulos\ModuloEF\Processos\uExportacaoDCTF.pas
+ G   modulos\ModuloEF\Processos\uFiltroBaixaParcelamento.dfm
+U    modulos\ModuloEF\Processos\uFiltroImportacaoSpedContribuicoes.dfm
+U    modulos\ModuloEF\Processos\uFiltroImportacaoSpedContribuicoes.pas
+U    modulos\ModuloEF\Processos\uFrmDadosSpedContribuicoes.dfm
+U    modulos\ModuloEF\Processos\uFrmDadosSpedContribuicoes.pas
+U    modulos\ModuloEF\Processos\uImportacaoSpedTreeView.dfm
+U    modulos\ModuloEF\Processos\uImportacaoSpedTreeView.pas
+U    modulos\ModuloEF\Processos\uProcessoSimplesNacional.dfm
+U    modulos\ModuloEF\Processos\uProcessoSimplesNacional.pas
+U    modulos\ModuloEF\Processos\uTrocaGlobalDemaisDocumentos.pas
+U    modulos\ModuloEF\Relatorios\uRelatorioConferenciaNotasFiltradas.dfm
+U    modulos\ModuloEF\Relatorios\uRelatorioConferenciaNotasFiltradas.pas
+U    modulos\ModuloEF\Relatorios\uRelatorioDasn.dfm
+U    modulos\ModuloEF\Relatorios\uRelatorioDasn.pas
+U    modulos\ModuloEF\Relatorios\uRelatorioDirbi.dfm
+U    modulos\ModuloEF\Relatorios\uRelatorioDirbi.pas
+U    modulos\ModuloEF\Relatorios\uRelatorioOperacoesImobiliarias.dfm
+U    modulos\ModuloEF\Relatorios\uRelatorioOperacoesImobiliarias.pas
+U    modulos\ModuloFinanceiro\Cadastros\uCadContaBancaria.pas
+U    modulos\ModuloFinanceiro\Consultas\uConsultaImportacaoCSVVFIN.dfm
+U    modulos\ModuloFinanceiro\Consultas\uConsultaImportacaoCSVVFIN.pas
+U    modulos\ModuloFinanceiro\Dll\DllReportFinanceiro.dproj
+U    modulos\ModuloFinanceiro\ModuloFinanceiro.dpk
+U    modulos\ModuloFinanceiro\ModuloFinanceiro.dproj
+U    modulos\ModuloFinanceiro\Processos\uLancamentoServicoFaturar.dfm
+U    modulos\ModuloFinanceiro\Processos\uLancamentoServicoFaturar.pas
+A    modulos\ModuloFinanceiro\Processos\uRemessaCresol.dfm
+A    modulos\ModuloFinanceiro\Processos\uRemessaCresol.pas
+A    modulos\ModuloFinanceiro\Schemas\PRODAUB
+A    modulos\ModuloFinanceiro\Schemas\PRODAUB\2.04
+A    modulos\ModuloFinanceiro\Schemas\PRODAUB\2.04\nfse.xsd
+A    modulos\ModuloFinanceiro\Schemas\PRODAUB\2.04\xmldsig-core-schema20020212.xsd
+U    modulos\ModuloFinanceiroContabilidade\ModuloFinanceiroContabilidade.dpk
+U    modulos\ModuloFinanceiroContabilidade\ModuloFinanceiroContabilidade.dproj
+U    modulos\ModuloFolha\Calculos\Individual\uCalculoIndividualAutonomo.pas
+U    modulos\ModuloFolha\Consultas\uConsultaBasesFolha.pas
+U    modulos\ModuloFolha\Consultas\uConsultabasesAut.pas
+U    modulos\ModuloFolha\Dll\DllReportFolha.dproj
+U    modulos\ModuloFolha\ModuloFolha.dproj
+U    modulos\ModuloFolha\Processos\uProcessoExportacaoRHNet.pas
+U    modulos\ModuloFolha\Relatorios\uRelatorioReciboFolha.pas
+U    modulos\ModuloGestorImpostos\ModuloGestorImpostos.dpk
+U    modulos\ModuloGestorImpostos\ModuloGestorImpostos.dproj
+U    modulos\ModuloIntegracao\ModuloIntegracao.dpk
+U    modulos\ModuloIntegracao\ModuloIntegracao.dproj
+U    modulos\ModuloIntegracao\Processos\uAutoThreadSequenciaColaborador.pas
+U    modulos\ModuloIntegracao\Processos\uAutoThreadSequenciaEmpresa.pas
+U    modulos\ModuloIntegracao\Processos\uSelecaoRecontabilizacao.dfm
+U    modulos\ModuloIntegracao\Relatorios\uRelSequenciaRelatorios.dfm
+U    modulos\ModuloIntegracao\Relatorios\uRelSequenciaRelatorios.pas
+U    modulos\ModuloLalur\ModuloLaluR.dproj
+U    modulos\ModuloOrcamento\ModuloOrcamento.dpk
+U    modulos\ModuloOrcamento\ModuloOrcamento.dproj
+U    modulos\ModuloOrcamento\Principal\uOrcamentoUnico.dfm
+U    modulos\ModuloOrcamento\Principal\uOrcamentoUnico.pas
+A    modulos\ModuloOrcamento\Relatorio\uRelCompDadosAnuais.dfm
+A    modulos\ModuloOrcamento\Relatorio\uRelCompDadosAnuais.pas
+A    modulos\ModuloOrcamento\Relatorio\uRelControleOrcamentario.dfm
+A    modulos\ModuloOrcamento\Relatorio\uRelControleOrcamentario.pas
+U    modulos\ModuloOrcamento\Relatorio\uRelOrcamentoDadosCadastrais.dfm
+U    modulos\ModuloOrcamento\Relatorio\uRelOrcamentoDadosCadastrais.pas
+U    modulos\ModuloPonto\Processos\uProcessoApuracaoPonto.pas
+U    modulos\ModuloProtocolo\ModuloProtocolos.dpk
+U    modulos\ModuloProtocolo\ModuloProtocolos.dproj
+U    modulos\ModuloRH\Cadastros\uCadColaboradores.dfm
+U    modulos\ModuloRH\Cadastros\uCadContribuintes.dfm
+U    modulos\ModuloRH\Cadastros\uCadContribuintes.pas
+U    modulos\ModuloRH\Cadastros\uCadTercRPA.dfm
+U    modulos\ModuloRH\Cadastros\uCadTercRPA.pas
+   C modulos\ModuloRH\Consultas\uConsVerbasDownload.dfm
+   C modulos\ModuloRH\Consultas\uConsVerbasDownload.pas
+   C modulos\ModuloRH\Dll\Imagens\imFolga.bmp
+   C modulos\ModuloRH\Dll\Imagens\imFolgaSemFundo.bmp
+U    modulos\ModuloRH\Dll\Relatorios\frRelatorioFichaRegistroAuxiliar.fr3
+U    modulos\ModuloRH\ExportacaoBanco\uDadosCompExportaBancoMentoreCargaDeposito.dfm
+U    modulos\ModuloRH\Exportacoes\uExportacaoRoover.dfm
+U    modulos\ModuloRH\Exportacoes\uExportacaoRoover.pas
+U    modulos\ModuloRH\Exportacoes\uProcessoExportacaoBancoRH.pas
+U    modulos\ModuloRH\Gerador\uRelGeradorRelatorioRH.pas
+C    modulos\ModuloRH\ModuloRH.dpk
+C    modulos\ModuloRH\ModuloRH.dproj
+C    modulos\ModuloRH\Relatorios\uRelatorioConfiguravel.dfm
+U    modulos\ModuloSCI\Cadastros\uCadEmpresas.dfm
+U    modulos\ModuloSCI\Cadastros\uCadGrupoUsuario.dfm
+U    modulos\ModuloSCI\Cadastros\uCadGrupoUsuario.pas
+U    modulos\ModuloSCI\Cadastros\uCadImposto.dfm
+U    modulos\ModuloSCI\Cadastros\uCadImposto.pas
+U    modulos\ModuloSCI\Consultas\uConfiguraPreparacaoParaSistemas.pas
+U    modulos\ModuloSCI\Consultas\uConsultaApuracaoImposto.dfm
+U    modulos\ModuloSCI\Consultas\uConsultaApuracaoImposto.pas
+U    modulos\ModuloSCI\Consultas\uConsultaPlanoConsConfQSelecoes.pas
+U    modulos\ModuloSCI\Consultas\uSobreUnico.pas
+C    modulos\ModuloSCI\DataModules\udmSCI.dfm
+C    modulos\ModuloSCI\DataModules\udmSCI.pas
+U    modulos\ModuloSCI\DataModules\udmSCIConsulta.dfm
+C    modulos\ModuloSCI\DataModules\udmSCIConsulta.pas
+U    modulos\ModuloSCI\Dll\ConvertBMP\ConvertBMP.dproj
+U    modulos\ModuloSCI\Dll\DllExternalFile32.dproj
+U    modulos\ModuloSCI\Dll\DllExternalFile64.dproj
+C    modulos\ModuloSCI\Dll\DllPadroes.dproj
+C    modulos\ModuloSCI\Dll\DllPadroesResource.rc
+U    modulos\ModuloSCI\Dll\DllReport.dproj
+A    modulos\ModuloSCI\Dll\IMAGENS\Logos\Prefeituras_JPEG\Passos_MG.jpeg
+A    modulos\ModuloSCI\Dll\IMAGENS\Logos\Prefeituras_JPEG\Pratapolis_MG.jpeg
+A    modulos\ModuloSCI\Dll\IMAGENS\spConsultaLayout.bmp
+A    modulos\ModuloSCI\Dll\IMAGENS\spConsultaLayout_d.bmp
+A    modulos\ModuloSCI\Dll\IMAGENS\spConsultaLayout_h.bmp
+   C modulos\ModuloSCI\Dll\IMAGENS\spConsultaVerbas.bmp
+   C modulos\ModuloSCI\Dll\IMAGENS\spConsultaVerbas_d.bmp
+   C modulos\ModuloSCI\Dll\IMAGENS\spConsultaVerbas_h.bmp
+A    modulos\ModuloSCI\Dll\IMAGENS\spLog2.bmp
+A    modulos\ModuloSCI\Dll\IMAGENS\spLog2_d.bmp
+A    modulos\ModuloSCI\Dll\IMAGENS\spLog2_h.bmp
+   C modulos\ModuloSCI\Dll\IMAGENS\spNavFGTS.bmp
+   C modulos\ModuloSCI\Dll\IMAGENS\spNavFGTS_d.bmp
+   C modulos\ModuloSCI\Dll\IMAGENS\spNavFGTS_h.bmp
+A    modulos\ModuloSCI\Dll\IMAGENS\spParamTarefa.bmp
+A    modulos\ModuloSCI\Dll\IMAGENS\spParamTarefa_d.bmp
+A    modulos\ModuloSCI\Dll\IMAGENS\spParamTarefa_h.bmp
+   C modulos\ModuloSCI\Dll\IMAGENS\spVersNav.bmp
+   C modulos\ModuloSCI\Dll\IMAGENS\spVersNav_d.bmp
+   C modulos\ModuloSCI\Dll\IMAGENS\spVersNav_h.bmp
+U    modulos\ModuloSCI\ModuloSCI.dproj
+U    modulos\ModuloSCI\Processos\uAutoThreadPushPadrao.pas
+U    modulos\ModuloSCI\Processos\uEnviarBancoParaSCI.pas
+U    modulos\ModuloSChIp\Cadastros\uCadastroPlanoSChIpDiretorio.dfm
+U    modulos\ModuloSChIp\Cadastros\uCadastroPlanoSChIpDiretorio.pas
+U    modulos\ModuloSChIp\Cadastros\uCadastroPlanoSChIpv2.pas
+A    modulos\ModuloSucessor\Cadastros\uCadGeradorExtenso.dfm
+A    modulos\ModuloSucessor\Cadastros\uCadGeradorExtenso.pas
+U    modulos\ModuloSucessor\Cadastros\uCadPreparacaoDeParaEmpresas.dfm
+U    modulos\ModuloSucessor\Cadastros\uMigracaoLancamentosContabeis.dfm
+U    modulos\ModuloSucessor\Cadastros\uMigracaoLancamentosContabeis.pas
+U    modulos\ModuloSucessor\Cadastros\uPreparacaoDeParaCentroCusto.dfm
+U    modulos\ModuloSucessor\Cadastros\uPreparacaoDeParaCentroCusto.pas
+U    modulos\ModuloSucessor\Cadastros\uPreparacaoDeParaPlanoContas.dfm
+U    modulos\ModuloSucessor\Cadastros\uPreparacaoDeParaPlanoContas.pas
+U    modulos\ModuloSucessor\Consultas\uConsultaDeParaEmpresas.dfm
+A    modulos\ModuloSucessor\Consultas\uConsultaGeradorExtenso.dfm
+A    modulos\ModuloSucessor\Consultas\uConsultaGeradorExtenso.pas
+U    modulos\ModuloSucessor\Consultas\uConsultaMigracaoLancContabeis.dfm
+U    modulos\ModuloSucessor\Consultas\uConsultaMigracaoLancContabeis.pas
+U    modulos\ModuloSucessor\Consultas\uMigracaoCentralConferiencia.dfm
+U    modulos\ModuloSucessor\Consultas\uMigracaoCentralConferiencia.pas
+U    modulos\ModuloSucessor\Dll\Relatorios\Contabil_Balancete.fr3
+U    modulos\ModuloSucessor\Dll\Relatorios\Contabil_Balanco.fr3
+U    modulos\ModuloSucessor\Dll\Relatorios\Contabil_DEMIND.fr3
+U    modulos\ModuloSucessor\Dll\Relatorios\Contabil_DRE.fr3
+U    modulos\ModuloSucessor\ModuloSucessoR.dpk
+U    modulos\ModuloSucessor\ModuloSucessoR.dproj
+U    modulos\ModuloSucessor\Principal\uContabilidadeUnico.dfm
+U    modulos\ModuloSucessor\Principal\uContabilidadeUnico.pas
+U    modulos\ModuloSucessor\Processos\uExportacaoCOSIF.dfm
+U    modulos\ModuloSucessor\Processos\uExportacaoCOSIF.pas
+U    modulos\ModuloSucessor\Processos\uExportacaoDESIF.dfm
+U    modulos\ModuloSucessor\Processos\uExportacaoDESIF.pas
+U    modulos\ModuloSucessor\Processos\uExportacaoWinthorTotvs.dfm
+U    modulos\ModuloSucessor\Processos\uExportacaoWinthorTotvs.pas
+U    modulos\ModuloSucessor\Processos\uFiltroCentralConferenciaMigracao.dfm
+U    modulos\ModuloSucessor\Relatorios\uRelBalancete.dfm
+U    modulos\ModuloSucessor\Relatorios\uRelBalancete.pas
+U    modulos\ModuloSucessor\Relatorios\uRelBalanceteMensal.dfm
+U    modulos\ModuloSucessor\Relatorios\uRelBalanceteMensal.pas
+U    modulos\ModuloSucessor\Relatorios\uRelBalancoPatrimonial.dfm
+U    modulos\ModuloSucessor\Relatorios\uRelBalancoPatrimonial.pas
+U    modulos\ModuloSucessor\Relatorios\uRelDFC.dfm
+U    modulos\ModuloSucessor\Relatorios\uRelDFC.pas
+U    modulos\ModuloSucessor\Relatorios\uRelDLPA.dfm
+U    modulos\ModuloSucessor\Relatorios\uRelDLPA.pas
+U    modulos\ModuloSucessor\Relatorios\uRelDMPLCPC26.dfm
+U    modulos\ModuloSucessor\Relatorios\uRelDMPLCPC26.pas
+U    modulos\ModuloSucessor\Relatorios\uRelDRA.dfm
+U    modulos\ModuloSucessor\Relatorios\uRelDRE.dfm
+U    modulos\ModuloSucessor\Relatorios\uRelDRE.pas
+U    modulos\ModuloSucessor\Relatorios\uRelDiarioCompleto.dfm
+U    modulos\ModuloSucessor\Relatorios\uRelDiarioCompleto.pas
+U    modulos\ModuloTemporizador\Cadastros\uCadAtividadesExecutadas.dfm
+U    modulos\ModuloTemporizador\Cadastros\uCadRegistroAtividadeExecutada.dfm
+U    modulos\ModuloTemporizador\Processos\uFiltroObservacaoAtividades.dfm
+U    modulos\ModuloTemporizador\Processos\uFiltroObservacaoAtividades.pas
+U    modulos\ModuloTemporizador\Processos\uFiltroProcessosRealizados.dfm
+U    modulos\ModuloTemporizador\Processos\uFiltroProcessosRealizados.pas
+U    modulos\ModuloTemporizador\Relatorios\uRelAtividadesTemporizador.dfm
+U    modulos\ModuloTemporizador\Relatorios\uRelGeralLancamentos.dfm
+U    modulos\ModuloTemporizador\Relatorios\uRelGeralLancamentos.pas
+U    modulos\ModuloTemporizador\Relatorios\uRelTemporizadorModeloB.dfm
+U    modulos\ModuloTemporizador\Relatorios\uRelTemporizadorProcessos.dfm
+U    projetos\AcessoUnico\AcessoUnico.dproj
+U    projetos\AnyDeskGuardian\AnyDeskGuardianSCI.dproj
+U    projetos\Controles\Controles.dpr
+U    projetos\Controles\Controles.dproj
+U    projetos\Controles\Dashdoard\PrototipoDashboard\PrototipoDashboard.dproj
+U    projetos\Controles\uControles.dfm
+U    projetos\Controles\uControles.pas
+A    projetos\Controles\uTestePainelTarefas.dfm
+A    projetos\Controles\uTestePainelTarefas.pas
+U    projetos\Escrita Fb\Escrita.dpr
+U    projetos\Escrita Fb\Escrita.dproj
+U    projetos\Escrita Fb\Test\EscritaTests.dproj
+UG   projetos\Financeiro\Contabilidade\FinanceiroContabilidade.dpr
+UG   projetos\Financeiro\Contabilidade\FinanceiroContabilidade.dproj
+CG   projetos\Folha Fb\Practice.dpr
+CG   projetos\Folha Fb\Practice.dproj
+U    projetos\Folha Fb\TesteCargaRHNet.dproj
+C    projetos\Folha Fb\uPractice.pas
+U    projetos\Ponto Fb\Pontual.dproj
+U    projetos\ScriptVersao\ScriptVersao.dproj
+U    projetos\Sucessor Fb\Sucessor.dpr
+U    projetos\Sucessor Fb\Sucessor.dproj
+U    projetos\Sucessor Fb\Test\ContabilTests.dproj
+U    projetos\TestesChromium\TestesChromium.dproj
+U    projetos\UnicoBrowser\SCIBrowser.dproj
+U    projetos\WallpaperSCIUploader\WallpaperSCIUploader.dproj
+U    projetos\validacoes_gerador\ValidadorGeracaoVersao.dproj
+U    servidor\ServidorProcesso\ServidorSCI.dproj
+U    servidor\ServidorProcesso\ServidorSCI32.dpr
+U    servidor\ServidorProcesso\ServidorSCI32.dproj
+U    servidor\ServidorProcesso\ServidorSCI64.dpr
+U    servidor\ServidorProcesso\ServidorSCI64.dproj
+U    servidor\ServidorProcesso\ServidorSCIInterface.dpr
+U    servidor\ServidorProcesso\ServidorSCIInterface.dproj
+U    servidor\ServidorSCI.dpr
+U    servidor\ServidorSCI.dproj
+U    servidor\ServidorThreads.dpr
+U    servidor\ServidorThreads.dproj
+U    servidor\ThreadsServicos\uThreadIntegracoesParceiros.pas
+U    servidor\ThreadsServicos\uThreadRelatoriosSCIReport.pas
+U    servidor\classes\Controles\uFinalizaTarefasAguardando.pas
+U    servidor\classes\Controles\uSincronizaTarefas.pas
+U    servidor\comobjects\MyINIFileManager\UntINIfileManager.pas
+U    servidor\uControles.dfm
+U    servidor\uControles.pas
+U    servidor\uControlesConsulta.dfm
+U    servidor\uControlesConsulta.pas
+U    servidor\uSCI.dfm
+U    servidor\uSCI.pas
+U    servidor\uSCIConsulta.dfm
+U    servidor\uSCIConsulta.pas
+U    servidor\uThreadWebService.pas
+U    svnUtil\svnUtil.dproj
+U    update\GerenciadorSCIServico.dpr
+U    update\GerenciadorSCIServico.dproj
+U    update\UpdateSCI.dpr
+U    update\UpdateSCI.dproj
+U    update\uMainGerenciadorSCIServico.pas
+U    utilitßrios\AdicionaLinhasACBr\AdicionaLinhas.dproj
+U    utilitßrios\IBExpert_Patch_FB4\IBExpert_Patch_FB4.dproj
+U    utilitßrios\LeCallStack64Bits\LeCallStack64Bits.dproj
+U    utilitßrios\RecebeArquivosAmazon\RecebeArquivosAmazon.dproj
+U    utilitßrios\Reptile\Reptile.dproj
+U    utilitßrios\Servico_Slack_SCI\Servico_Slack_SCI.dproj
+U    utilitßrios\Slack_Envia_Emails\Slack_Envia_Emails.dproj
+U    utilitßrios\TestaScripts_Jenkins\TestaScripts_Jenkins.dproj
+U    utilitßrios\ThreadRestore\Project1.dproj
+U    utilitßrios\TrocaBaseLocal\prTrocaBaseLocal.dproj
+U    utilitßrios\TrocaTipoUnico_BrasaoUnico\TrocaTipoUnico_BrasaoUnico.dproj
+U    utilitßrios\UtilitarioFB3_TestComplete\UtilitarioFB3_TestComplete.dproj
+U    utilitßrios\VerificaCastsFontes\VerificaCastsFontes.dproj
+U    utilitßrios\VersaoAjuda\EVA.dproj
+U    ·nico\Unico.dproj
+U    ·nico\uClasses_Unico.pas
+U    ·nico\uNotificacaoPadrao.pas
+U    ·nico\uSelecionaMenu.pas
+U    ·nico\uUnico.pas
+ G   .
+--- Recording mergeinfo for merge of r169666 through r170131 into '.':
+ G   .
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\Protocolo':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\Protocolo
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_CTRLOBRSERDB.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_CTRLOBRSERDB.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_CTRLOBRSERDBMGR.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_CTRLOBRSERDBMGR.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_OBRIGACAODB.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_OBRIGACAODB.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_OBRIGACAODBMgr.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_OBRIGACAODBMgr.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_SERVICODB.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_SERVICODB.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_SERVICODBMgr.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_BASE_SERVICODBMgr.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_CONFIG_TELAOBRSERDB.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_CONFIG_TELAOBRSERDB.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_CONFIG_TELAOBRSERDBMgr.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_CONFIG_TELAOBRSERDBMgr.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TAREFASWEBDB.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TAREFASWEBDB.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TAREFASWEBDBMgr.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TAREFASWEBDBMgr.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TAREFASWEBOBSDB.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TAREFASWEBOBSDB.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TAREFASWEBOBSDBMgr.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TAREFASWEBOBSDBMgr.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_THISTORICOTAREFADB.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_THISTORICOTAREFADB.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_THISTORICOTAREFADBMgr.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_THISTORICOTAREFADBMgr.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TOBSTAREFADB.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TOBSTAREFADB.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TOBSTAREFADBMgr.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TOBSTAREFADBMgr.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TSOLICITATAREFADB.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_EMPRESA_TSOLICITATAREFADB.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_PLANO_TRIBUTARIODB.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_PLANO_TRIBUTARIODB.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_PLANO_TRIBUTARIODBMgr.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_PLANO_TRIBUTARIODBMgr.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_TRIBUTARIO_EMPRESADB.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_TRIBUTARIO_EMPRESADB.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_TRIBUTARIO_EMPRESADBMgr.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_TRIBUTARIO_EMPRESADBMgr.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_TRIBUTOS_PLANO_TRIBUTARIODB.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_TRIBUTOS_PLANO_TRIBUTARIODB.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_TRIBUTOS_PLANO_TRIBUTARIODBMgr.pas':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\Controles\uVCT_TRIBUTOS_PLANO_TRIBUTARIODBMgr.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'componentes\SCI Componentes\Componentes\CLASSES DAO\SCI':
+ G   componentes\SCI Componentes\Componentes\CLASSES DAO\SCI
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos':
+ G   modulos\ModuloControles\Processos
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uBaixaProtocoloSaida.dfm':
+ G   modulos\ModuloControles\Processos\uBaixaProtocoloSaida.dfm
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uBaixaProtocoloSaida.pas':
+ G   modulos\ModuloControles\Processos\uBaixaProtocoloSaida.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uConsultaImportaTarefaWeb.dfm':
+ G   modulos\ModuloControles\Processos\uConsultaImportaTarefaWeb.dfm
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uConsultaImportaTarefaWeb.pas':
+ G   modulos\ModuloControles\Processos\uConsultaImportaTarefaWeb.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uControleAlteraFinalizacao.dfm':
+ G   modulos\ModuloControles\Processos\uControleAlteraFinalizacao.dfm
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uControleAlteraFinalizacao.pas':
+ G   modulos\ModuloControles\Processos\uControleAlteraFinalizacao.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uControlePausaTarefa.dfm':
+ G   modulos\ModuloControles\Processos\uControlePausaTarefa.dfm
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uControlePausaTarefa.pas':
+ G   modulos\ModuloControles\Processos\uControlePausaTarefa.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uFiltroTarefa.dfm':
+ G   modulos\ModuloControles\Processos\uFiltroTarefa.dfm
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uFiltroTarefa.pas':
+ G   modulos\ModuloControles\Processos\uFiltroTarefa.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uLanProtocoloSaida.dfm':
+ G   modulos\ModuloControles\Processos\uLanProtocoloSaida.dfm
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uLanProtocoloSaida.pas':
+ G   modulos\ModuloControles\Processos\uLanProtocoloSaida.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uObservacaoTarefa.dfm':
+ G   modulos\ModuloControles\Processos\uObservacaoTarefa.dfm
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uObservacaoTarefa.pas':
+ G   modulos\ModuloControles\Processos\uObservacaoTarefa.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uProtocoloDocumentos.dfm':
+ G   modulos\ModuloControles\Processos\uProtocoloDocumentos.dfm
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uProtocoloDocumentos.pas':
+ G   modulos\ModuloControles\Processos\uProtocoloDocumentos.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uSolicitacaoTarefas.dfm':
+ G   modulos\ModuloControles\Processos\uSolicitacaoTarefas.dfm
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uSolicitacaoTarefas.pas':
+ G   modulos\ModuloControles\Processos\uSolicitacaoTarefas.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uTrocaUsuarioResponsavelSolicitacaoTarefa.dfm':
+ G   modulos\ModuloControles\Processos\uTrocaUsuarioResponsavelSolicitacaoTarefa.dfm
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloControles\Processos\uTrocaUsuarioResponsavelSolicitacaoTarefa.pas':
+ G   modulos\ModuloControles\Processos\uTrocaUsuarioResponsavelSolicitacaoTarefa.pas
+--- Recording mergeinfo for merge of r169666 through r170131 into 'modulos\ModuloEF\Processos\uFiltroBaixaParcelamento.dfm':
+ G   modulos\ModuloEF\Processos\uFiltroBaixaParcelamento.dfm
+--- Recording mergeinfo for merge of r169666 through r170131 into 'projetos\Financeiro\Contabilidade\FinanceiroContabilidade.dpr':
+ G   projetos\Financeiro\Contabilidade\FinanceiroContabilidade.dpr
+--- Recording mergeinfo for merge of r169666 through r170131 into 'projetos\Financeiro\Contabilidade\FinanceiroContabilidade.dproj':
+ G   projetos\Financeiro\Contabilidade\FinanceiroContabilidade.dproj
+--- Recording mergeinfo for merge of r169666 through r170131 into 'projetos\Folha Fb\Practice.dpr':
+ G   projetos\Folha Fb\Practice.dpr
+--- Recording mergeinfo for merge of r169666 through r170131 into 'projetos\Folha Fb\Practice.dproj':
+ G   projetos\Folha Fb\Practice.dproj
+Searching tree conflict details for 'Script\Proxima\depois\2025_03_12_1504_FOLHA_ItensTelaDCTFPadrao.sql' in repository:
+
+Checking r170123...
+Checking r170122...
+Checking r169867... done
+Searching tree conflict details for 'Script\Proxima\depois\RelaþÒo de faltas folgas.unico_ger' in repository:
+
+Checking r170123...
+Checking r170122...
+Checking r170114...
+Checking r169766... done
+Searching tree conflict details for 'Script\Proxima\depois\VRH_BASE_TRELCONF_ITENS_codigo_nome.sql' in repository:
+
+Checking r170123...
+Checking r170122...
+Checking r169805...
+Checking r169766... done
+Searching tree conflict details for 'modulos\ModuloRH\Consultas\uConsVerbasDownload.dfm' in repository:
+
+Checking r170123...
+Checking r170122...
+Checking r169766... done
+Searching tree conflict details for 'modulos\ModuloRH\Consultas\uConsVerbasDownload.pas' in repository:
+
+Checking r170123...
+Checking r170122...
+Checking r169766... done
+Searching tree conflict details for 'modulos\ModuloRH\Dll\Imagens\imFolga.bmp' in repository:
+
+Checking r170123...
+Checking r170122...
+Checking r170114...
+Checking r169766... done
+Searching tree conflict details for 'modulos\ModuloRH\Dll\Imagens\imFolgaSemFundo.bmp' in repository:
+
+Checking r170123...
+Checking r170122...
+Checking r170114...
+Checking r169766... done
+Searching tree conflict details for 'modulos\ModuloSCI\Dll\IMAGENS\spConsultaVerbas.bmp' in repository:
+
+Checking r170123...
+Checking r170122...
+Checking r169766... done
+Searching tree conflict details for 'modulos\ModuloSCI\Dll\IMAGENS\spConsultaVerbas_d.bmp' in repository:
+
+Checking r170123...
+Checking r170122...
+Checking r169766... done
+Searching tree conflict details for 'modulos\ModuloSCI\Dll\IMAGENS\spConsultaVerbas_h.bmp' in repository:
+
+Checking r170123...
+Checking r170122...
+Checking r169766... done
+Searching tree conflict details for 'modulos\ModuloSCI\Dll\IMAGENS\spNavFGTS.bmp' in repository:
+
+Checking r170123...
+Checking r170122...
+Checking r169867... done
+Searching tree conflict details for 'modulos\ModuloSCI\Dll\IMAGENS\spNavFGTS_d.bmp' in repository:
+
+Checking r170123...
+Checking r170122...
+Checking r169867... done
+Searching tree conflict details for 'modulos\ModuloSCI\Dll\IMAGENS\spNavFGTS_h.bmp' in repository:
+
+Checking r170123...
+Checking r170122...
+Checking r169867... done
+Searching tree conflict details for 'modulos\ModuloSCI\Dll\IMAGENS\spVersNav.bmp' in repository:
+
+Checking r170123...
+Checking r170122...
+Checking r169867... done
+Searching tree conflict details for 'modulos\ModuloSCI\Dll\IMAGENS\spVersNav_d.bmp' in repository:
+
+Checking r170123...
+Checking r170122...
+Checking r169867... done
+Searching tree conflict details for 'modulos\ModuloSCI\Dll\IMAGENS\spVersNav_h.bmp' in repository:
+
+Checking r170123...
+Checking r170122...
+Checking r169867... done
+Summary of conflicts:
+  Text conflicts: 15
+  Tree conflicts: 16
+
+
+Subversion merge successful.
+
+
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Completed      | Execute Powershell Script| Execute Powershell Script [Get Diffs Count]                                     |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Successfully Executed Powershell Script
+
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Completed      | Read Text File           | Read Text File [ merge_alteracoes.txt ]                                         |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Reading file...
+Escaping variables...
+Successfully read file C:\merge_alteracoes.txt
+
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Completed      | Execute Powershell Script| Execute Powershell Script [Get Conflicts Count]                                 |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Successfully Executed Powershell Script
+
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Completed      | Read Text File           | Read Text File [ merge_alteracoes.txt ]                                         |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Reading file...
+Escaping variables...
+Successfully read file C:\merge_alteracoes.txt
+
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Completed      | If .. Then               | If [%merge_conflitos%] > [0]  [ True ]                                          |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Expression:
+     If ( %merge_conflitos% > 0 ) 
+Expanded Values:
+     31  >  0  [integer comparison evaluates true]
+Expression evaluated True - child actions will be run
+
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Error          | Raise Exception          | Raise Exception [Não foi possível fazer o merge automático, faça manualmente par|
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Não foi possível fazer o merge automático, faça manualmente para resolver os conflitos.
+
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Completed      | Finally                  | Finally                                                                         |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Completed      | Subversion Revert        | Subversion Revert                                                               |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+SVN Work Folder = C:\DW
+SVN Command = C:\Program Files\TortoiseSVN\bin\svn.exe revert --quiet --recursive  c:\dw c:\dwsci
+Executing external process: C:\Program Files\TortoiseSVN\bin\svn.exe
+Starting Directory: C:\DW
+Parameters: revert --quiet --recursive  c:\dw c:\dwsci
+Output from C:\Program Files\TortoiseSVN\bin\svn.exe
+
+Subversion revert successful
+
+
+---------------|--------------------------|---------------------------------------------------------------------------------|
+Completed      | End                      | End                                                                             |
+---------------|--------------------------|---------------------------------------------------------------------------------|
+
+    End Log.
+
+    
+------------------------------------------------
+Copyright © 2010 VSoft Technologies Pty Ltd
+http://www.finalbuilder.com

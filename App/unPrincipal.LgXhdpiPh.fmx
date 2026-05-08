@@ -1,0 +1,176 @@
+inherited frmPrincipal_LgXhdpiPh: TfrmPrincipal_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 3
+  inherited ImgCheck: TImage
+    MultiResBitmap.Height = 512
+    MultiResBitmap.Width = 512
+  end
+  inherited Layout2: TLayout
+    Size.Width = 450.000000000000000000
+    Size.Height = 553.000000000000000000
+    inherited tcMenu: TTabControl
+      Size.Width = 450.000000000000000000
+      Size.Height = 553.000000000000000000
+      Sizes = (
+        450s
+        553s
+        450s
+        553s)
+      inherited tbMenus: TTabItem
+        ExplicitSize.cx = 8.000000000000000000
+        ExplicitSize.cy = 8.000000000000000000
+        inherited lyUser: TLayout
+          Size.Width = 450.000000000000000000
+          inherited lbNomeUsuario: TLabel
+            Size.Width = 450.000000000000000000
+          end
+        end
+        inherited lyComissoes: TLayout
+          Size.Width = 450.000000000000000000
+          Size.Height = 645.000000000000000000
+          inherited Rectangle2: TRectangle
+            Size.Width = 436.000000000000000000
+            Size.Height = 633.000000000000000000
+            inherited lyComissaoTitulo: TLayout
+              Size.Width = 436.000000000000000000
+              inherited lbComissoes: TLabel
+                Size.Width = 436.000000000000000000
+              end
+            end
+            inherited lyDashboard: TLayout
+              Size.Width = 436.000000000000000000
+              Size.Height = 527.000000000000000000
+              inherited lyDashRow1: TLayout
+                Size.Width = 436.000000000000000000
+                inherited rDashComEnt: TRectangle
+                  Size.Width = 192.000000000000000000
+                  inherited lbDashComEntregas: TLabel
+                    Size.Width = 180.000000000000000000
+                  end
+                  inherited lbDashComEntregasValor: TLabel
+                    Size.Width = 180.000000000000000000
+                  end
+                end
+              end
+              inherited lyDashRow2: TLayout
+                Size.Width = 436.000000000000000000
+                inherited rDashComKm: TRectangle
+                  Size.Width = 192.000000000000000000
+                  inherited lbDashComKm: TLabel
+                    Size.Width = 180.000000000000000000
+                  end
+                  inherited lbDashComKmValor: TLabel
+                    Size.Width = 180.000000000000000000
+                  end
+                end
+              end
+              inherited lyDashRow3: TLayout
+                Size.Width = 436.000000000000000000
+                inherited rDashTotal: TRectangle
+                  Size.Width = 420.000000000000000000
+                  inherited lbDashTotal: TLabel
+                    Size.Width = 408.000000000000000000
+                  end
+                  inherited lbDashTotalValor: TLabel
+                    Size.Width = 408.000000000000000000
+                  end
+                end
+              end
+              inherited lyFiltro: TLayout
+                Size.Width = 436.000000000000000000
+                inherited btDashFiltrar: TButton
+                  Size.Width = 128.000000000000000000
+                end
+              end
+            end
+          end
+        end
+      end
+      inherited tbEntregas: TTabItem
+        ExplicitSize.cx = 8.000000000000000000
+        ExplicitSize.cy = 8.000000000000000000
+        inherited lvEntregas: TListBox
+          Size.Width = 450.000000000000000000
+          Size.Height = 468.000000000000000000
+          Viewport.Width = 453.000000000000000000
+          Viewport.Height = 580.000000000000000000
+        end
+        inherited Layout3: TLayout
+          Position.Y = 468.000000000000000000
+          Size.Width = 450.000000000000000000
+          inherited Rectangle3: TRectangle
+            Size.Width = 450.000000000000000000
+            inherited rFoto: TRectangle
+              inherited imgFoto: TImage
+                MultiResBitmap.Height = 512
+                MultiResBitmap.Width = 512
+              end
+            end
+            inherited rGPS: TRectangle
+              Position.X = 299.000000000000000000
+              inherited imgGPS: TImage
+                MultiResBitmap.Height = 512
+                MultiResBitmap.Width = 512
+              end
+            end
+            inherited rAtualizar: TRectangle
+              inherited ImgAtualizar: TImage
+                MultiResBitmap.Height = 512
+                MultiResBitmap.Width = 512
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  inherited lbottom: TLayout
+    Position.Y = 610.000000000000000000
+    Size.Width = 450.000000000000000000
+    inherited rfundo: TRectangle
+      Size.Width = 450.000000000000000000
+    end
+    inherited rEntregas: TRectangle
+      Position.X = 112.188598632812500000
+      Size.Width = 112.500640869140600000
+      inherited ImEntregas: TImage
+        MultiResBitmap.Height = 512
+        MultiResBitmap.Width = 512
+      end
+      inherited lbEntregas: TLabel
+        Size.Width = 112.500640869140600000
+      end
+    end
+    inherited rMenus: TRectangle
+      Size.Width = 112.500205993652300000
+      inherited ImMenus: TImage
+        MultiResBitmap.Height = 512
+        MultiResBitmap.Width = 512
+      end
+      inherited lbMenus: TLabel
+        Size.Width = 112.500205993652300000
+      end
+    end
+    inherited rSair: TRectangle
+      Position.X = 365.000000000000000000
+      inherited imSair: TImage
+        MultiResBitmap.Height = 205
+        MultiResBitmap.Width = 256
+      end
+    end
+  end
+  inherited ltop: TLayout
+    Size.Width = 450.000000000000000000
+    inherited Rectangle1: TRectangle
+      Size.Width = 450.000000000000000000
+      inherited lbMenu: TLabel
+        Size.Width = 450.000000000000000000
+      end
+      inherited imgMenu: TImage
+        MultiResBitmap.Height = 512
+        MultiResBitmap.Width = 512
+      end
+    end
+  end
+end

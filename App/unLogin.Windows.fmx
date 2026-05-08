@@ -1,0 +1,31 @@
+inherited frmLogin_Windows: TfrmLogin_Windows
+  DesignerMasterStyle = 0
+  inherited Layout1: TLayout
+    inherited Image1: TImage
+      MultiResBitmap.LoadSize = 2
+    end
+    inherited Layout2: TLayout
+      inherited edUsuario: TEdit
+        TextSettings.FontColor = claBlack
+      end
+    end
+    inherited Layout3: TLayout
+      inherited edSenha: TEdit
+        TextSettings.FontColor = claBlack
+      end
+    end
+    inherited Layout6: TLayout
+      inherited RoundRect3: TRoundRect
+        Stroke.Kind = Bitmap
+      end
+    end
+  end
+  inherited lbottom: TLayout
+    inherited Rectangle2: TRectangle
+      inherited imgSair: TImage
+        MultiResBitmap.Height = 205
+        MultiResBitmap.Width = 256
+      end
+    end
+  end
+end
